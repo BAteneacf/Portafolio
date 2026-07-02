@@ -1,3 +1,242 @@
-<p>Hola mundo este es mi portafolio</p>
-<a href="https://github.com/BAteneacf/Portafolio/blob/main/Clase%201.html"> Clase 1 </a>
-<a href="https://github.com/BAteneacf/Portafolio/blob/main/Tarea%201.html"> Tarea 1 </a>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Python — Abril Castañeda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #faf6fb;
+    --ink: #453a56;
+    --ink-soft: rgba(69,58,86,0.62);
+    --card: #ffffff;
+    --lav: #d9c9f0;
+    --lav-deep: #a98fd6;
+    --mint: #bfe6d6;
+    --mint-deep: #6fb99a;
+    --peach: #f7d3c1;
+    --peach-deep: #e39a76;
+    --butter: #f6e6ad;
+    --butter-deep: #d8b84a;
+    --sky: #c7e0f0;
+    --sky-deep: #7fb2d6;
+    --line: rgba(69,58,86,0.10);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding: 60px 20px 90px;
+  }
+
+  .wrap{
+    width:100%;
+    max-width: 720px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    padding-bottom: 36px;
+    margin-bottom: 44px;
+    border-bottom: 2px dashed var(--line);
+  }
+
+  .eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mint-deep);
+    margin: 0 0 16px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-weight: 600;
+  }
+
+  .eyebrow::before{
+    content:"";
+    width: 9px;
+    height: 9px;
+    background: var(--mint-deep);
+    border-radius: 50%;
+    display:inline-block;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(36px, 7vw, 56px);
+    line-height: 1.05;
+    margin: 0 0 14px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  h1 em{
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(180deg, transparent 62%, var(--lav) 62%);
+    padding: 0 2px;
+  }
+
+  .byline{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin: 0 0 6px;
+  }
+
+  .byline a{
+    color: var(--sky-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sky-deep);
+  }
+
+  .byline a:hover{
+    color: var(--lav-deep);
+    border-color: var(--lav-deep);
+  }
+
+  /* ---------- SECTION LABEL ---------- */
+
+  .section-label{
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+    font-weight: 600;
+  }
+
+  /* ---------- CLASS LIST ---------- */
+
+  .clases{
+    display:flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .clase{
+    background: var(--card);
+    border-radius: 14px;
+    padding: 18px 22px;
+    border: 1px solid var(--line);
+    box-shadow: 0 2px 0 var(--line);
+  }
+
+  .clase-title{
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 10px;
+    display:flex;
+    align-items:center;
+    gap: 9px;
+  }
+
+  .dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .clase:nth-child(1) .dot{ background: var(--lav-deep); }
+  .clase:nth-child(2) .dot{ background: var(--sky-deep); }
+  .clase:nth-child(3) .dot{ background: var(--peach-deep); }
+  .clase:nth-child(4) .dot{ background: var(--mint-deep); }
+  .clase:nth-child(5) .dot{ background: var(--butter-deep); }
+
+  .tareas{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tareas li a{
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    transition: color 0.15s ease;
+  }
+
+  .tareas li a::before{
+    content:"→";
+    color: var(--mint-deep);
+    font-weight: 600;
+  }
+
+  .tareas li a:hover{
+    color: var(--ink);
+    text-decoration: underline;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer{
+    margin-top: 50px;
+    padding-top: 22px;
+    border-top: 2px dashed var(--line);
+    font-size: 12px;
+    color: var(--ink-soft);
+    text-align:center;
+  }
+
+  @media (max-width: 560px){
+    body{ padding: 44px 16px 70px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">Portafolio Python</p>
+    <h1><em>Portafolio</em> Python</h1>
+    <p class="byline">Abril Castañeda · <a href="https://github.com/BAteneacf" target="_blank">github.com/BAteneacf</a></p>
+  </div>
+
+  <p class="section-label">Clases &amp; tareas</p>
+
+  <div class="clases">
+
+    <div class="clase">
+      <h3 class="clase-title"><span class="dot"></span><a href="https://github.com/BAteneacf/Portafolio/blob/main/Clase%201.html" target="_blank" style="color:inherit; text-decoration:none;">Clase 1</a></h3>
+      <ul class="tareas">
+        <li><a href="https://github.com/BAteneacf/Portafolio/blob/main/Tarea%201.html" target="_blank">Tarea 1</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    hecho con 🐍 y mucho commit — Abril Castañeda
+  </footer>
+
+</div>
+
+</body>
+</html>
